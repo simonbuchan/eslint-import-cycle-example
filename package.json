@@ -1,0 +1,30 @@
+{
+  "name": "eslint-import-cycle",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.3"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2015
+    },
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "import/no-cycle": ["error", { "commonjs": true }]
+    },
+    "overrides": [
+      {
+        "files": ["import-*.js"],
+        "parserOptions": {
+          "sourceType": "module"
+        }
+      }
+    ]
+  }
+}
